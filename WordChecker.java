@@ -1,7 +1,15 @@
+import java.util.ArrayList;
 public class WordChecker {
     /** Initialized in the constructor and contains no null elements */
     private ArrayList<String> wordList;
-    
+    public WordChecker(ArrayList<String> list)
+       {
+            wordList = list;
+       }
+    public WordChecker()
+    {
+        wordList = new ArrayList<String>();
+    }
     /**
      * Returns true if each element of wordList (except the first) contains the
      * previous
@@ -11,8 +19,13 @@ public class WordChecker {
      */
     public boolean isWordChain() 
     {
-        
-        /* to be implemented in part (a) */ 
+        /* to be implemented in part (a) */
+        boolean wordChain = true;
+        for(int i = 1; i < wordList.size(); i++)
+        {
+            String after = wordList.get(1);
+            String before = wordList.get(i -1 );
+        } 
     }
 
     /**
