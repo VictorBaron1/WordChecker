@@ -20,12 +20,16 @@ public class WordChecker {
     public boolean isWordChain() 
     {
         /* to be implemented in part (a) */
-        boolean wordChain = true;
+        
         for(int i = 1; i < wordList.size(); i++)
         {
-            String after = wordList.get(1);
+            boolean wordChain = true;
+            String after = wordList.get(i);
             String before = wordList.get(i -1 );
-        } 
+            if (after.indexOf(before) < 0) return false;
+        }
+        return true;
+         
     }
 
     /**
@@ -37,6 +41,17 @@ public class WordChecker {
      * Items appear in the returned list in the same order as they appear in
      * wordList.
      */
-    public ArrayList<String> createList(String target) {
-        /* to be implemented in part (b) */ }
+    public ArrayList<String> createList(String target) 
+    {
+        /* to be implemented in part (b) */ 
+        ArrayList<String> list = new ArrayList<String>();
+        for (String s : wordList){
+            if(s.indexOf(target) == 0){
+                list.add(s.substring(target.length()));
+            }
+        }
+        return list;
+        
+        
+    }
 }

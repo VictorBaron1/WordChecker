@@ -10,7 +10,8 @@ public class Main
        words.add("band");
        words.add("abandon");
        System.out.println(words);
-       WordChecker x = new WordChecker(words); 
+       WordChecker x = new WordChecker(words);
+       System.out.print(x.isWordChain()); 
     }
 
 } 
